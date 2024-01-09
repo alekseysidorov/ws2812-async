@@ -29,7 +29,7 @@ impl<SPI: SpiBus<u8>, const N: usize> Ws2812<SPI, N> {
             }
         }
         self.spi.write(&self.data).await?;
-        let blank = [0_u8; 140];
+        let blank = [0_u8; 50];
         self.spi.write(&blank).await
     }
 }
